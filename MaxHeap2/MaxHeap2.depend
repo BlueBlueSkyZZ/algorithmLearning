@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1519800286 source:e:\编程\c\maxheap2\main.cpp
+	<iostream>
+	<algorithm>
+	"Heap.h"
+	"MergeSort.h"
+	"QuickSort.h"
+	"SortTestHelper.h"
+
+1519787723 e:\编程\c\maxheap2\heap.h
+	<iostream>
+	<algorithm>
+	<string>
+	<ctime>
+	<cmath>
+	<cassert>
+	<typeinfo>
+
+1519785726 e:\编程\c\maxheap2\mergesort.h
+	<iostream>
+	<algorithm>
+
+1519785755 e:\编程\c\maxheap2\quicksort.h
+	<iostream>
+	<algorithm>
+	"MergeSort.h"
+	"SortTestHelper.h"
+	"InsertionSort.h"
+
+1519785708 e:\编程\c\maxheap2\sorttesthelper.h
+	<iostream>
+	<ctime>
+	<cassert>
+
+1519785828 e:\编程\c\maxheap2\insertionsort.h
+	<iostream>
+	<algorithm>
+

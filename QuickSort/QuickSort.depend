@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1519628285 source:e:\编程\c\quicksort\main.cpp
+	<iostream>
+	<algorithm>
+	"MergeSort.h"
+	"SortTestHelper.h"
+	"InsertionSort.h"
+
+1518847141 e:\编程\c\quicksort\mergesort.h
+	<iostream>
+	<algorithm>
+
+1518512498 e:\编程\c\quicksort\sorttesthelper.h
+	<iostream>
+	<ctime>
+	<cassert>
+
+1518593059 e:\编程\c\quicksort\insertionsort.h
+	<iostream>
+	<algorithm>
+

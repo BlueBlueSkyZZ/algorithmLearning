@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1518181781 source:e:\±à³Ì\c\selectionsort\main.cpp
+	<iostream>
+	<string>
+	<algorithm>
+	"Student.h"
+	"SortTestHelper.h"
+
+1518097494 e:\±à³Ì\c\selectionsort\student.h
+	<iostream>
+	<string>
+
+1518181733 e:\±à³Ì\c\selectionsort\sorttesthelper.h
+	<iostream>
+	<ctime>
+	<cassert>
+

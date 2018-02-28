@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1518251651 source:e:\±à³Ì\c\insertionsort\main.cpp
+	<iostream>
+	<algorithm>
+	"SortTestHelper.h"
+	"SelectionSort.h"
+
+1518185599 e:\±à³Ì\c\insertionsort\sorttesthelper.h
+	<iostream>
+	<ctime>
+	<cassert>
+
+1518183126 e:\±à³Ì\c\insertionsort\selectionsort.h
+	<iostream>
+	<algorithm>
+
