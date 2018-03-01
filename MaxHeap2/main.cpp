@@ -15,7 +15,8 @@ class IndexMaxHeap{
 private:
     Item* data;//数组指针
     int* indexes;//索引数组
-//    int* reverse;
+    int* reverse;//反向索引
+
     int count;//现在有的数字
     int capacity;//数组容量
 
@@ -24,6 +25,10 @@ private:
         //与父节点进行比较
         while(k > 1 && data[indexes[k/2]] < data[indexes[k]]) {
             swap(indexes[k/2], indexes[k]);
+
+            reverse[indexes[k/2]] = k/2;
+            reverse[indexes[k]] = k;
+
             k /= 2;
         }
     }
@@ -41,6 +46,10 @@ private:
                 break;
 
             swap(indexes[k], indexes[j]);
+
+            reverse[indexes[k]] = k;
+            reverse[indexes[j]] = j;
+
             k = j;
 
         }
@@ -52,18 +61,18 @@ public:
         //开辟空间
         data =  new Item[capacity + 1];
         indexes = new Item[capacity + 1];
-//        reverse = new Item[capacity + 1];
-//        for(int i = 0; i <= capacity; i++)
-//            reverse[i] = 0;
+        reverse = new Item[capacity + 1];
+        for(int i = 0; i <= capacity; i++)
+            reverse[i] = 0;
 
         count = 0;
         this->capacity = capacity;
     }
 
-    ~MaxHeap(){
+    ~IndexMaxHeap(){
         delete[] data;
         delete[] indexes;
-//        delete[] reverse;
+        delete[] reverse;
     }
 
     int size(){
@@ -83,6 +92,7 @@ public:
         i += 1;
         data[i] = item;
         indexes[count+1] = i;
+        reverse[i] = count + 1;
 
         count++;
         shiftUp(count);
@@ -96,13 +106,17 @@ public:
 
         //保持二叉堆性质
         swap(indexes[1], indexes[count]);
+
+        reverse[indexes[1]] = 1;
+        reverse[indexes[count]] = 0;
+
         count--;
         shiftDown(1);
 
         return ret;
     }
 
-    //取出最大值（根节点）的索引
+    //取出最大值（根节点）返回索引
     int extractMaxIndex(){
         assert(count > 0);
 
@@ -110,33 +124,50 @@ public:
 
         //保持二叉堆性质
         swap(indexes[1], indexes[count]);
+
+        reverse[indexes[1]] = 1;
+        reverse[indexes[count]] = 0;
+
         count--;
         shiftDown(1);
 
         return ret;
     }
 
+    /**
+    判断是否存在于数组中
+    */
+    bool contain(int i) {
+        assert(i + 1 >= 1 && i + 1 <= capacity);
+        return reverse[i+1] != 0;
+    }
+
     Item getItem(int i) {
+        //判断索引i是否在堆中
+        assert(contain(i));
         return data[i+1];
     }
 
     void change(int i, Item newItem) {
-        //与索引存放位置有关
-        i += 1;
+        //判断索引i是否在堆中
+        assert(contain(i));
 
+        //i与索引存放位置有关
+        i += 1;
         data[i] = newItem;
 
         //找到索引i在indexes中的位置
         //尝试上移下移
-        for(int j = 1; j <= count; j++) {
-            if(indexes[j] == i) {
-                shiftUp(j);
-                shiftDown(j);
-                return;
-            }
-        }
-
-
+//        for(int j = 1; j <= count; j++) {
+//            if(indexes[j] == i) {
+//                shiftUp(j);
+//                shiftDown(j);
+//                return;
+//            }
+//        }
+        int j = reverse[i];
+        shiftUp(j);
+        shiftDown(j);
     }
 
 public:

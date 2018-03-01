@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1519740373 source:e:\±à³Ì\c\maxheap\main.cpp
+	<iostream>
+	<algorithm>
+	<string>
+	<ctime>
+	<cmath>
+	<cassert>
+	<typeinfo>
+
