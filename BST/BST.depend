@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1520144555 source:e:\±à³Ì\c\bst\main.cpp
+	<iostream>
+	<algorithm>
+	<queue>
+	<ctime>
+	<cassert>
+

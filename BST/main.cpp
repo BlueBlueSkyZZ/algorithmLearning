@@ -1,5 +1,7 @@
 #include <iostream>
+#include <algorithm>
 #include <queue>
+#include <ctime>
 #include <cassert>
 
 using namespace std;
@@ -131,6 +133,10 @@ public:
         remove(root, key);
     }
 
+    void remove2(Key key){
+        remove2(root, key);
+    }
+
 private:
     //向以node为根的二叉搜索树中插入节点
     //返回插入节点之后二叉搜索树的根
@@ -147,7 +153,7 @@ private:
         else if(key < node->key)
             node->left = insert(node->left, key, value);
         else
-            node->right = insert(node->left, key, value);
+            node->right = insert(node->right, key, value);
 
         return node;
     }
@@ -210,7 +216,7 @@ private:
     }
 
     //采用后序遍历思想
-    void destory(){
+    void destory(Node* node){
 
         if(node != NULL){
             destory(node->left);
@@ -318,10 +324,93 @@ private:
             return successor;
         }
     }
+
+    Node* remove2(Node* node, Key key) {
+        if(node == NULL)
+            return NULL;
+
+        if(node->key > key){
+            node->left = remove2(node->left, key);
+            return node;
+        }
+        else if(node->key < key){
+            node->right = remove2(node->right, key);
+            return node;
+        }
+        else{
+            //key == node->key
+            if(node->left == NULL){
+                Node* rightNode = node->right;
+                delete node;
+                count--;
+                return rightNode;
+            }
+            else if(node->right == NULL){
+                Node* leftNode = node->left;
+                delete node;
+                count--;
+                return leftNode;
+            }
+
+            //if node->left && node->right != NULL
+            Node* processor = new Node(maximum(node->left));
+            count++;
+
+            processor->left = removeMax(node->left);
+            processor->right = node->right;
+
+            delete node;
+            count--;
+
+            return processor;
+        }
+
+    }
 };
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    srand(time(NULL));
+    BST<int,int> bst = BST<int,int>();
+
+    // 取n个取值范围在[0...m)的随机整数放进二分搜索树中
+    int N = 10;
+    int M = 20;
+    for( int i = 0 ; i < N ; i ++ ){
+        int key = rand()%M;
+        // 为了后续测试方便,这里value值取和key值一样
+        int value = key;
+        cout<<key<<" ";
+        bst.insert(key,value);
+    }
+
+    cout<<endl;
+
+    // 测试二分搜索树的size()
+    cout<<"size: "<<bst.size()<<endl<<endl;
+
+    // 测试二分搜索树的前序遍历 preOrder
+    cout<<"preOrder: "<<endl;
+    bst.preOrder();
+    cout<<endl;
+
+    // 测试二分搜索树的中序遍历 inOrder
+    cout<<"inOrder: "<<endl;
+    bst.inOrder();
+    cout<<endl;
+
+    // 测试二分搜索树的后序遍历 postOrder
+    cout<<"postOrder: "<<endl;
+    bst.postOrder();
+    cout<<endl;
+
+
+    bst.remove2(10);
+
+    // 测试二分搜索树的层序遍历 levelOrder
+    cout<<"levelOrder: "<<endl;
+    bst.levelOrder();
+    cout<<endl;
+
     return 0;
 }
