@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1520168405 source:e:\编程\c\unionfind\main.cpp
+	<iostream>
+	"UnionFindTestHelper.h"
+
+1520168086 e:\编程\c\unionfind\unionfindtesthelper.h
+	<iostream>
+	<algorithm>
+	<ctime>
+	"UnionFind1.h"
+	"UnionFind2.h"
+	"UnionFind3.h"
+	"UnionFind4.h"
+	"UnionFind5.h"
+
+1520152888 e:\编程\c\unionfind\unionfind1.h
+	<iostream>
+	<cassert>
+
+1520163265 e:\编程\c\unionfind\unionfind2.h
+	<iostream>
+	<cassert>
+
+1520168434 e:\编程\c\unionfind\unionfind3.h
+	<iostream>
+	<cassert>
+
+1520166577 e:\编程\c\unionfind\unionfind4.h
+	<iostream>
+	<cassert>
+
+1520169145 e:\编程\c\unionfind\unionfind5.h
+	<iostream>
+	<cassert>
+
