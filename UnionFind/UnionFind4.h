@@ -11,7 +11,7 @@ namespace UF4{
     class UnionFind{
     private:
         int* parent;
-        int* rank; //sz[i]表示以i为根的集合中元素的个数
+        int* rank; //rank[i]表示以i为根的集合树的高度
         int count;
 
     public:
