@@ -15,7 +15,7 @@ class ReadGraph{
 public:
     ReadGraph(Graph &graph, const string &filename){
 
-        ifstream file(filename);//读取file
+        ifstream file(filename.c_str());//读取file
         string line;//一行一行读取
         int V, E;
 
@@ -33,9 +33,11 @@ public:
             stringstream ss(line);
 
             int a, b;
+            //将ss中的啊a、b放入
             ss >> a >> b;
             assert(a >= 0 && a < V);
             assert(b >= 0 && b < V);
+            graph.addEdge(a, b);
 
         }
     }

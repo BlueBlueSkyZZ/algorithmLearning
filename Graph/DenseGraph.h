@@ -60,6 +60,15 @@ public:
         return g[v][w];
     }
 
+    void show(){
+
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n; j++)
+                cout<<g[i][j]<<"  ";
+            cout<<endl;
+        }
+    }
+
     class adjIterator{
     private:
         DenseGraph &G;
@@ -70,11 +79,9 @@ public:
         adjIterator(DenseGraph &graph, int v): G(graph){
             this->v = v;
             this->index = -1;
-
         }
 
         int begin(){
-
             index = -1;
             return next();
         }
@@ -90,7 +97,6 @@ public:
         bool end(){
             return index >= G.V();
         }
-
 
     };
 };

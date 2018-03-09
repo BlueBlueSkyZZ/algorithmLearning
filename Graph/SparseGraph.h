@@ -38,11 +38,13 @@ public:
         assert(v >= 0 && v < n);
         assert(w >= 0 && w < n);
 
+        if(!judgeParallelEdges(g[w], v))
+            return;
+
         g[v].push_back(w);
         //处理自环边及平行边
         if(v != w && !directed )
-            if(judgeParallelEdges(g[v], w))
-                g[w].push_back(v);
+            g[w].push_back(v);
 
         m++;
     }
@@ -57,6 +59,15 @@ public:
         return false;
     }
 
+    void show(){
+
+        for(int i = 0; i < n; i++){
+            cout<<"vertex "<<i<<":\t";
+            for(int j = 0; j < g[i].size(); j++)
+                cout<<g[i][j]<<"  ";
+            cout<<endl;
+        }
+    }
 
     //判断两点之间是否已经存在连接
     //存在返回False,不存在返回True

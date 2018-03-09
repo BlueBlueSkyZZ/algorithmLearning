@@ -1,0 +1,52 @@
+# depslib dependency file v1.0
+1520488895 source:e:\编程\c\graph\main.cpp
+	<iostream>
+	<algorithm>
+	<ctime>
+	"SparseGraph.h"
+	"DenseGraph.h"
+	"ReadGraph.h"
+	"Component.h"
+	"Path.h"
+	"ShortestPath.h"
+
+1520406547 e:\编程\c\graph\sparsegraph.h
+	<iostream>
+	<vector>
+	<cassert>
+	"BST.h"
+
+1520322686 e:\编程\c\graph\bst.h
+	<iostream>
+	<algorithm>
+	<queue>
+	<ctime>
+	<cassert>
+
+1520604340 e:\编程\c\graph\densegraph.h
+	<iostream>
+	<vector>
+	<cassert>
+
+1520405823 e:\编程\c\graph\readgraph.h
+	<iostream>
+	<string>
+	<fstream>
+	<sstream>
+	<cassert>
+
+1520475318 e:\编程\c\graph\component.h
+	<algorithm>
+	<cassert>
+	"DenseGraph.h"
+	"SparseGraph.h"
+
+1520487676 e:\编程\c\graph\path.h
+	<algorithm>
+	<cassert>
+	<stack>
+	"DenseGraph.h"
+	"SparseGraph.h"
+
+1520488876 e:\编程\c\graph\shortestpath.h
+
