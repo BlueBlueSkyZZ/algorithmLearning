@@ -38,6 +38,12 @@
 		<Unit filename="Edge.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="IndexMinHeap.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="LazyPrimMST.h" />
+		<Unit filename="MinHeap.h" />
+		<Unit filename="PrimMST.h" />
 		<Unit filename="ReadGraph.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>

@@ -16,11 +16,11 @@ using namespace std;
 
 template <typename Weight>
 class DenseGraph{
-typedef vector<Edge<Weight>* > edge;
+typedef vector<Edge<Weight>* > EDGE;
 private:
     int n, m;
     bool directed;
-    vector<edge> g;
+    vector<EDGE> g;
 
 public:
     DenseGraph( int n , bool directed){
@@ -28,9 +28,9 @@ public:
         this->m = 0;
         this->directed = directed;
 //        for( int i = 0 ; i < n ; i ++ ){
-//            g.push_back( edge(n, NULL) );
+//            g.push_back( EDGE(n,(Edge<Weight>*) NULL) );
 //        }
-        g = vector< edge >(n, edge(n, NULL));
+        g = vector< EDGE >(n, EDGE(n, (Edge<Weight>*)NULL));
     }
 
     ~DenseGraph(){
