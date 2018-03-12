@@ -41,6 +41,9 @@
 		<Unit filename="IndexMinHeap.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="KruskalMST.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="LazyPrimMST.h" />
 		<Unit filename="MinHeap.h" />
 		<Unit filename="PrimMST.h" />
@@ -50,10 +53,20 @@
 		<Unit filename="SparseGraph.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="UF.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="main.cpp" />
 		<Unit filename="testG1.txt">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="testG2.txt">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="testG3.txt">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="testG4.txt" />
 		<Extensions>
 			<code_completion />
 			<envvars />

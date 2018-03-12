@@ -1,11 +1,14 @@
 # depslib dependency file v1.0
-1520691478 source:e:\编程\c\minimumspantree\main.cpp
+1520823099 source:e:\编程\c\minimumspantree\main.cpp
 	<iostream>
 	<iomanip>
+	<ctime>
 	"DenseGraph.h"
 	"SparseGraph.h"
 	"ReadGraph.h"
 	"LazyPrimMST.h"
+	"PrimMST.h"
+	"KruskalMST.h"
 
 1520686212 e:\编程\c\minimumspantree\densegraph.h
 	<iostream>
@@ -38,4 +41,27 @@
 	"MinHeap.h"
 
 1520691312 e:\编程\c\minimumspantree\minheap.h
+
+1520734907 e:\编程\c\minimumspantree\primmst.h
+	<iostream>
+	<vector>
+	<cassert>
+	"Edge.h"
+	"IndexMinHeap.h"
+
+1520734893 e:\编程\c\minimumspantree\indexminheap.h
+	<iostream>
+	<algorithm>
+	<cassert>
+
+1520823077 e:\编程\c\minimumspantree\kruskalmst.h
+	<iostream>
+	<vector>
+	"MinHeap.h"
+	"UF.h"
+	"Edge.h"
+
+1520822499 e:\编程\c\minimumspantree\uf.h
+	<iostream>
+	<cassert>
 
