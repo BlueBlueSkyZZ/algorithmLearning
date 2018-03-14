@@ -16,9 +16,9 @@ private:
     Graph &G;//图的引用
     int s;//源节点
 
-    Weight *distTo;//最短距离
+    Weight *distTo;//distTo[i]存储从起始点s到i的最短路径长度
     bool *marked;//节点是否被访问
-    vector< Edge<Weight>* > from;
+    vector< Edge<Weight>* > from;//from[i]记录最短路径中, 到达i点的边是哪一条
 
 public:
     Dijkstra(Graph &graph, int s):G(graph){
@@ -42,6 +42,7 @@ public:
         distTo[s] = Weight();//默认构造函数为0
         marked[s] = true;//访问s
         from[s] = new Edge<Weight>(s, s, Weight());
+
         ipq.insert( s, distTo[s] );//压入最小索引堆
 
         while( !ipq.isEmpty() ){
@@ -49,7 +50,7 @@ public:
 
             //distTo[v]就是s到v的最短距离
             marked[v] = true;
-
+            //松弛操作
             typename Graph::adjIterator adj(G, v);
             for( Edge<Weight>* e = adj.begin(); !adj.end(); e = adj.next() ){
                 int w = e->other(v);
@@ -71,6 +72,7 @@ public:
     ~Dijkstra(){
         delete[] distTo;
         delete[] marked;
+        delete from[s];
     }
 
     Weight shortestPathTo(int w){
